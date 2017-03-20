@@ -7,6 +7,7 @@ public class Main {
         System.out.println("Jarvis here, what can I do for you today?");
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
+        //this is a comment in the main class
 
         String[] inputArray = s.split(" ");
 
