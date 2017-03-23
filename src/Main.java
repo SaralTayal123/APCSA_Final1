@@ -29,7 +29,56 @@ public class Main {
                 Time time = new Time();
                 time.setReminder();
             }
+            if (checker.equals("add")) {
+                int index;
+                int no1 = -1;
+                int no2 = -1;
+
+                for (int i = 0; i < inputArray.length; i++)
+                {
+                    if (inputArray[i].equals("add"))
+                    {
+                        index = i;
+                        break;
+                    }
+                }
+                for (int i = index; i < inputArray.length;i++)
+                {
+                    boolean isInteger = isInteger(inputArray[i]);
+                    if (isInteger)
+                    {
+                        if (no2 ==-1 && (no1!= -1))
+                            no2 = Integer.parseInt(inputArray[i]);
+                        no1 = Integer.parseInt(inputArray[i]);
+
+                    }
+                    else
+                        System.out.println("Please provide valid integers");
+                }
+            }
         }
 
     }
+
+
+
+
+    public static boolean isInteger(String s) {
+        boolean isValidInteger = false;
+        try
+        {
+            Integer.parseInt(s);
+
+            // s is a valid integer
+
+            isValidInteger = true;
+        }
+        catch (NumberFormatException ex)
+        {
+            // s is not an integer
+        }
+
+        return isValidInteger;
+    }
+
 }
